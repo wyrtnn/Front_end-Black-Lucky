@@ -13,6 +13,7 @@ registerForm.addEventListener('submit', async (e) => {
   try {
     const response = await fetch('https://backend-black-luck-2.onrender.com/auth/register', {
       method: 'POST',
+      credentials: "include", 
       headers: {
         'Content-Type': 'application/json',
       },
