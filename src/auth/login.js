@@ -7,20 +7,13 @@ const handleLogin = async (email, password) => {
     },
     body: JSON.stringify({ email, password })
   });
-
-  if (!response.ok) {
-    console.error("Ошибка сервера при входе:", response.status);
-    alert("Ошибка входа: " + response.status);
-    return;
-  }
-
+  
   const data = await response.json();
   console.log(data);
 };
 
 document.getElementById("loginForm").addEventListener("submit", (e) => {
   e.preventDefault();
-
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
