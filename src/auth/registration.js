@@ -3,12 +3,9 @@ const handleRegister = async (email, password) => {
       method: "POST",
       credentials: "include",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams({
-        email,
-        password
-      })
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email, password })
     });
   
     const data = await response.json();

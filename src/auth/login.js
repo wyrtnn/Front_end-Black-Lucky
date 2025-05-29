@@ -3,20 +3,23 @@ const handleLogin = async (email, password) => {
     method: "POST",
     credentials: "include",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/json"
     },
-    body: new URLSearchParams({
-      email,
-      password
-    })
+    body: JSON.stringify({ email, password })
   });
+
+  if (!response.ok) {
+    console.error("Ошибка сервера при входе:", response.status);
+    alert("Ошибка входа: " + response.status);
+    return;
+  }
 
   const data = await response.json();
   console.log(data);
 };
 
 document.getElementById("loginForm").addEventListener("submit", (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;

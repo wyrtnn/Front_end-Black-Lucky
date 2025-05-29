@@ -58,19 +58,35 @@ body {
 }
 
 .reg {
-    background-color: #770909;
+    display: block;
+    background-color: #01416b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
     border: none;
-    border-radius: 8px;
+    border-radius: 8px; 
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 5px;
 }
+.reg:hover {
+    background-color: #4fd1c5;
+}
+
 
 .sign-in{
-    background-color: #a57612;
+    background-color: #4f92d1;
     color: #ffffff;
     border: 1px solid #ccc;
     transition: background-color 0.3s ease;
 }
+.sign-in:hover {
+    background-color: #4fd1c5;
+}
+
 .login-form button:hover {
     cursor: pointer;
 }
